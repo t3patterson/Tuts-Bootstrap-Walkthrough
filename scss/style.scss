@@ -1,13 +1,17 @@
-$BS_FILE_PATH: ../node_modules/bootstrap/dist/;
 
-@import "$BS_FILE_PATH/css/bootstrap.css";   
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";   
 @font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url('$BS_FILE_PATH/fonts/glyphicons-halflings-regular.eot');
-    src: url('$BS_FILE_PATH/fonts/glyphicons-halflings-regular.ttf');
-    src: url('BS_FILE_PATH/fonts/glyphicons-halflings-regular.svg');
+  font-family: 'Glyphicons Halflings';
 
+  src: url('../node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot');
+  src: url('../node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+       url('../node_modules/bootstrap/dist//fonts/glyphicons-halflings-regular.woff2') format('woff2'), 
+       url('../node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'), 
+       url('../node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
+       url('../node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+
+
 
 /**
  * BOX-SIZING
@@ -19,7 +23,7 @@ $BS_FILE_PATH: ../node_modules/bootstrap/dist/;
     box-sizing: border-box;
     outline: 1px solid rgba(200,0,0,.15);
 }
-
+    
 /**
  * GRIDS
  */
