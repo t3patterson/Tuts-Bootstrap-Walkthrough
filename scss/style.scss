@@ -1,6 +1,13 @@
+$BS_FILE_PATH: ../node_modules/bootstrap/dist/;
 
-@import "../node_modules/bootstrap/dist/css/bootstrap.css"   
+@import "$BS_FILE_PATH/css/bootstrap.css";   
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('$BS_FILE_PATH/fonts/glyphicons-halflings-regular.eot');
+    src: url('$BS_FILE_PATH/fonts/glyphicons-halflings-regular.ttf');
+    src: url('BS_FILE_PATH/fonts/glyphicons-halflings-regular.svg');
 
+}
 
 /**
  * BOX-SIZING
