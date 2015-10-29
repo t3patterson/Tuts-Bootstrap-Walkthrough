@@ -78,7 +78,7 @@ Being a nazi is not cool, but in your code being an indentation nazis are okay. 
    **Tip**
 Think mobile first. It's easier to go from simple and build up to complex rather than the other way around
 
-###9. Portfolio Section - Responsive Columns W/ Thumbnails
+###7. Portfolio Section - Responsive Columns W/ Thumbnails
    1. Same as before: start with good div structure `.container-fluid` > `.row` > `.col-xs-12` and make 6 of them  
   
 *i.e*. `<div class="col-xs-12">` * 6
@@ -128,7 +128,3 @@ Think mobile first. It's easier to go from simple and build up to complex rather
 4. Grid it w/ icons & thumbnails
 
 ####Sundry todos 
-+ replace glyphicons w fontawesome
-+ links on index.html to what we're building
-  + original template > our template > raw bootstrap
-+ add modify the nav-menu with nav elements (about, services, contact)..also make it black
