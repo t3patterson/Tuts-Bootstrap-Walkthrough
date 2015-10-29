@@ -14,26 +14,20 @@ We will build sth based on and similar to this template
 run the npm install with your `package.json` file and any setup/linkups
 
 
-###2. Install bootstrap with npm and import it into your css file
-1. `npm install bootstrap`  
+###2. Configure bootstap and font awesome
+1. Install bootstrap thru npm: `npm install bootstrap`  
 
 2. At line 1 of your `style.css` file in you will need to import the bootstrap styles from the node_modules     
   ```
   @import ../node_modules/bootstrap/dist/css/bootstrap.css
   ```
 
-3. Get glyphicons set up -- we need to change the `url` font-file-path on the `@font-face` rule to `..node_modules/bootstrap/dist/fonts/«font-type»`
+3. Get **[font awesome](https://fortawesome.github.io/Font-Awesome/get-started/)** set up...in the `<head>` on your `index.html` page:
 ```
-    @font-face {
-      font-family: 'Glyphicons Halflings';
-      src: url('../node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot');
-      src: url('../node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
-          url('../node_modules/bootstrap/dist//fonts/glyphicons-halflings-regular.woff2') format('woff2'), 
-          url('../node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff') format('woff'), 
-          url('../node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
-          url('../node_modules/bootstrap/dist/fonts/glyphicons-halflings- regular.svg#glyphicons_halflingsregular') format('svg');
-    }
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
 ```
+
+4. Set `<div class="container">` to have a class of `wrapper` instead -- `container` is a bootstrap style
 
 
 ###3. Bootstrap On the Page Sanity Check
@@ -46,13 +40,18 @@ run the npm install with your `package.json` file and any setup/linkups
 `<h1>Hi bootstrap</h1>`
 
 ### -- Cool dev trick! --
-I use this `outline` css property to show the positioning of elements when i'm in dev phase. Makes me feel like a samaurai warrior. 
+I use this `outline` css property to show the positioning of elements when i'm in dev phase. You can also hover and increase pxls to demonstrate the box of the element. Makes me feel like a samaurai warrior. 
 ```
 *,
 *:before,
 *:after {
     box-sizing: border-box;
     outline: 1px solid rgba(200,0,0,.15);
+    tranition: all .1s;
+}
+
+*:hover{
+  outline: 2px solid rgba(200,0,0,.15);
 }
 ```
 
@@ -80,30 +79,42 @@ Think mobile first. It's easier to go from simple and build up to complex rather
 
 ###7. Portfolio Section - Responsive Columns W/ Thumbnails
    1. Same as before: start with good div structure `.container-fluid` > `.row` > `.col-xs-12` and make 6 of them  
-  
-*i.e*. `<div class="col-xs-12">` * 6
+      
+     *i.e*. `<div class="col-xs-12"> </div>` * 6
  
    2.  Grab the [thumbnail component](http://getbootstrap.com/components/#thumbnails-default) from the bs docs
    ```
    <a href="#" class="thumbnail">
-  <img src="..." alt="...">
-</a>
-<p>Deesigin</p>
+      <img src="..." alt="...">
+   </a>
    ```
  
    3. Populate the img-tag's  `src` attribute with random images from [lorempixel.com](http://lorempixel.com/)
 *e.g.* http://lorempixel.com/300/200/business/5
 
-###10. Footer w/ a form
+###8. Contact-us : responsive form & form group
 1. Same as it always was:
   `.container-fluid` > `.row` > `.col-«size»-«x/12»`
 
 2. we will need to use the [bootstrap forms](http://getbootstrap.com/css/#forms-example)...for now let's keep it simple with form types
+  - important thing about forms in bootstrap
+    1. outer div needs to have a class of `form-group`
+    2. `<input>` needs to have a class of `form-control`
 
 3. notice that the form changes layout when viewport widens...how should we do this any ideas?
-  **Answer:** `<form>` wraps around `col-xs-12` > `email, `  and  `col-xs-6`
+  **Answer:** 
+  ```
+  <div col-xs-12 col-xs-6> 
+     ## Name Input 
+     ## Email Input
+  </div>
+  <div col-xs-12 col-xs-6>
+    ## Tell Me More textarea
+  </div>
 
-4. For the big fat text area we will need [bootstrap's text area component](http://getbootstrap.com/css/#textarea)
+  ```
+
+4. For the big text area we will need [bootstrap's text area component](http://getbootstrap.com/css/#textarea)
 
 5. Let's checkout how the bootstrap button syntax `class= "btn btn-«type»`  note the many [button styles](http://getbootstrap.com/css/#buttons-options)
 
@@ -112,19 +123,85 @@ Think mobile first. It's easier to go from simple and build up to complex rather
 
 
 ### Polishing Up
-1. Navbar
-  - let's align the nav-elements to the right with bootstrap's
+this is when css skillz become important
+1. Add your own classes to major divs for your own styles...   
+  *it's a bad idea to style the bootstrap classes (e.g. `jumbotron`, `input-group`, `col-xs-12`, etc... ) in your CSS*  
+
+  - Example: `<div class="jumbotron hero-splash">` (+ `hero-splash`)
+    
+  - major divs to add:   
+    - `my-nav`
+    - `hero-splah`
+    - `services`
+    - `portfolio`
+    - `contact`
+  
+2. Margin/Padding
+  - set padding/margins on `h2` elements and on major `div`
+  ```
+    .services h2,
+    .portfolio h2,
+    .contact-us h2 {
+        margin: 0;
+        margin-bottom: 25px;
+    }
+
+    .portfolio, 
+    .services, 
+    .contact-us{
+        padding-top: 25px;
+        padding-bottom: 25px
+
+    }
+  ```
+
+3. Navbar
+  + let's align the nav-elements to the right with bootstrap's
     [navbar component alignment](http://getbootstrap.com/components/#navbar-component-alignment)
+  + let's make it black: add the class `navbar-inverse` on `<nav>` element
 
-2. Hero-div: 
-  - Let's center align [text-align center](http://getbootstrap.com/css/#type-alignment) for the hero-div:
-  - padding problem--- solve w/ padding-top on `.wrapper`
-  - margin problem -- .5rem for child elements
-     - note...generally a bad idea to style based on bootstrap classes. solution: create your own class
+4. Hero-div:
+  1. cool full-width background cover trick. on `.hero-splash` in `style.scss`
+  ```
+  background: url(http://lorempixel.com/900/600/nature/1/) 100% 100% no-repeat;
+  background-size: cover;
+  ```
+   
+  2. **problem**: navbar cuts into the herodiv
+    + **solution**: padding-top on wrapper div that is the same height of navbar
 
-3. Grid it w/ icons & text
-   *icons*
+5. Big Icons Centered in Circle - so hot right now!!!
+  1. The HTML  
+  ```
+  <div class="big-icon">
+    <i class="fa fa-shopping-cart"></i>
+  </div>
+  ```
 
-4. Grid it w/ icons & thumbnails
+  2. The CSS
+  *line-height* will vertically center the icon :)
+  ```
+    display: block;
+    margin: 0 auto;
+
+    line-height: 150px; width: 150px;
+    border-radius: 50%;
+
+    background: #f1c40f;
+    color: #fff;
+    font-size: 80px;
+    text-align: center;
+  ```
+
+6. Outer bg-color, narrow inner-content w/ bootstrap container classes
+```
+<div class="container-fluid">
+   <div class="container">
+     ## your HTML here
+   </div>
+</div>
+
+```
+  
 
 ####Sundry todos 
