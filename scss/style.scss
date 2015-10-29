@@ -21,7 +21,6 @@
 *:before,
 *:after {
     box-sizing: border-box;
-    outline: 1px solid rgba(200,0,0,.15);
 }
     
 /**
@@ -39,6 +38,8 @@
         flex-basis: 100%;
     }
 }
+
+ 
 
 @define-mixin grid_r $col, $width {
     @media only screen and (min-width: $(width)px) {
@@ -116,4 +117,87 @@ img {
  * YOUR CODE HERE
  */
 
+.wrapper{
+    padding-top: 50px;
+}
 
+.with-styles{
+
+    .nav-styles{
+        ul>li>a{
+            color: #f1c40f;
+        }
+    }
+    .hero-splash{
+        background: url(http://lorempixel.com/900/600/nature/1/) 100% 100% no-repeat;
+        background-size: cover;
+        h1{color: #fff;}
+        >*{
+            color:#fff;
+            margin: 8px;
+        }
+    }
+
+
+    .services h2,
+    .portfolio h2,
+    .contact-us h2 {
+        margin: 0;
+        margin-bottom: 25px;
+    }
+
+    .portfolio, 
+    .services, 
+    .contact-us{
+        padding-top: 25px;
+        padding-bottom: 25px
+
+    }
+
+    .services{
+                
+        .big-icon{
+            display: block;
+            margin: 0 auto;
+
+            line-height: 150px; width: 150px;
+            border-radius: 50%;
+
+            background: #f1c40f;
+            color: #fff;
+            font-size: 80px;
+            text-align: center;
+
+        }
+
+    }
+
+    .portfolio{
+        background: #eee;
+        
+        .tn-style{
+            background: #eee;
+
+        }
+
+    }
+
+    .contact-us{
+        background: #333;
+        color: #f1c40f;
+
+
+        .footy{
+            background: #fff;
+            color: #333;   
+        }
+    }
+
+
+
+    footer{
+        padding: 15px;
+        background: #fff;
+        color: #333;
+    }
+}

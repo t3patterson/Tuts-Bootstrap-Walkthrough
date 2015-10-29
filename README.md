@@ -56,18 +56,18 @@ I use this `outline` css property to show the positioning of elements when i'm i
 }
 ```
 
-###6. Hero Div -- w/ bootstrap's *jumbotron*
+###4. Hero Div -- w/ bootstrap's *jumbotron*
 1. Copy and paste code for hero unit -- bootstrap calls it [jumbotron] (http://getbootstrap.com/components/#jumbotron)
 
 **Tip**
 Being a nazi is not cool, but in your code being an indentation nazis are okay. Make sure your html is indented right
 
-###7. Navbar
+###5. Navbar
 1. Let's checkout the docs on Bootstrap's [Navbar](http://getbootstrap.com/components/#navbar)
 2. We could copy and paste straight from the docs like we did for the jumbotron BUT....we don't want all that stuff
 3. Lets be crafty....and take it from the page source i.e. c+p from Inspect Element: http://getbootstrap.com/components/#navbar-fixed-top
 
-###8. Grid It 1 - Responsive Content Columns
+###6. Sevices Section - Responsive Content Columns W/ Icons
 1. `.container-fluid` > `.row` > `.col-«size»-«x/12»` >  |your html|
   * this order of nesting is very important due to bootstraps margin/padding setting
 
@@ -78,7 +78,7 @@ Being a nazi is not cool, but in your code being an indentation nazis are okay. 
    **Tip**
 Think mobile first. It's easier to go from simple and build up to complex rather than the other way around
 
-###9. Grid It 2 - Responsive Image Columns
+###9. Portfolio Section - Responsive Columns W/ Thumbnails
    1. Same as before: start with good div structure `.container-fluid` > `.row` > `.col-xs-12` and make 6 of them  
   
 *i.e*. `<div class="col-xs-12">` * 6
@@ -111,19 +111,24 @@ Think mobile first. It's easier to go from simple and build up to complex rather
 
 
 
-### Cleanup
-1. Hero-div: 
-  - [text-align center](http://getbootstrap.com/css/#type-alignment) for the hero-div:
-     
-  - bg image
-  - padding problem--- solve w/ padding-top on `.wrapper`
-
-2. Navbar
+### Polishing Up
+1. Navbar
   - let's align the nav-elements to the right with bootstrap's
     [navbar component alignment](http://getbootstrap.com/components/#navbar-component-alignment)
+
+2. Hero-div: 
+  - Let's center align [text-align center](http://getbootstrap.com/css/#type-alignment) for the hero-div:
+  - padding problem--- solve w/ padding-top on `.wrapper`
+  - margin problem -- .5rem for child elements
+     - note...generally a bad idea to style based on bootstrap classes. solution: create your own class
 
 3. Grid it w/ icons & text
    *icons*
 
 4. Grid it w/ icons & thumbnails
 
+####Sundry todos 
++ replace glyphicons w fontawesome
++ links on index.html to what we're building
+  + original template > our template > raw bootstrap
++ add modify the nav-menu with nav elements (about, services, contact)..also make it black
