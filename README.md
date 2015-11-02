@@ -122,8 +122,8 @@ Think mobile first. It's easier to go from simple and build up to complex rather
 
 
 
-### Polishing Up
-this is when css skillz become important
+### Polishing Up With CSS
+this is when css skills become important
 1. Add your own classes to major divs for your own styles...   
   *it's a bad idea to style the bootstrap classes (e.g. `jumbotron`, `input-group`, `col-xs-12`, etc... ) in your CSS*  
 
@@ -204,4 +204,26 @@ this is when css skillz become important
 ```
   
 
-####Sundry todos 
+### Don't Be Basic
+Bootstrap resources and addons
+- [bootbundle](http://www.bootbundle.com/)
+  - **spectacular** resource for:
+    + additional components
+    + code snippets for common ui features
+    + themes
+    + flat icons
+    + stock images and photos
+    + mockups
+    + patterns/textures
+
+- [bootswatch](https://bootswatch.com/)
+  + aditional 'skins' for bootstrap
+    + changes default css styles for
+      + color schemes
+      + button styles
+      + typography 
+      + form groups & tables
+      + navs & dropdowns
+      + and more
+      + 
+

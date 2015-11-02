@@ -1,10 +1,7 @@
-@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";   
 
 
-/**
- * COLORS
- */
-$my-yellow: rgba(241, 196, 15,1.0);
 
 /**
  * BOX-SIZING
@@ -14,12 +11,17 @@ $my-yellow: rgba(241, 196, 15,1.0);
 *:before,
 *:after {
     box-sizing: border-box;
-    /*outline: 1px solid rgba(200,0,0,.15);
-    transition: all .1s;*/
+    /*
+    outline: 1px solid rgba(200,0,0,.15);
+    transition: all .1s;
+    */
 }
 
 *:hover{
-  /*outline: 2px solid rgba(200,0,0,.15);*/
+  /*
+  
+   outline: 3px solid rgba(200,0,0,.45);
+  */
 }
     
 /**
@@ -116,11 +118,9 @@ img {
  * YOUR CODE HERE
  */
 
-main#home{
-    body{margin:0;}
-    h1{font-weight: 200; background: #6f5499; color: #fff; padding: 10px; margin: 0 0 20px 0;}
+.wrapper{
+    padding-top: 50px;
 }
-
 
 .with-styles{
 
